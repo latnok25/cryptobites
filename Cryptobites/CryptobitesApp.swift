@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CryptobitesApp: App {
+    @State private var vm = HomeViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                HomeView().navigationBarHidden(true)
+                
+            }.environmentObject(vm)
         }
     }
 }
